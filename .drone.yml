@@ -1,0 +1,29 @@
+pipeline:
+  # Build and push tags :
+  build-and-push:
+    image: plugins/docker
+    repo: fpfis/nodejs
+    auto_tag: true
+    secrets: [ DOCKER_USERNAME, DOCKER_PASSWORD ]
+    when:
+      event: tag
+      
+  # Build and push dev release
+  build-and-push-branch:
+    image: plugins/docker
+    repo: fpfis/nodejs
+    tags: ${DRONE_BRANCH##*/}
+    secrets: [ DOCKER_USERNAME, DOCKER_PASSWORD ]
+    when:
+      event: push
+      branch: release/*
+
+  # Mark production
+  build-and-push-production:
+    image: plugins/docker
+    repo: fpfis/nodejs
+    tags: production-${DRONE_BRANCH##*/}
+    secrets: [ DOCKER_USERNAME, DOCKER_PASSWORD ]
+    when:
+      event: push
+      branch: production/*
