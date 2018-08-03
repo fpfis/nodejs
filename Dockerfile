@@ -1,4 +1,4 @@
-FROM php:7.2-fpm-alpine
+FROM alpine:3.7
 
 ENV DOCUMENT_ROOT /var/www/html
 ENV SUPERVISORD_CONF_DIR /etc/supervisord/
