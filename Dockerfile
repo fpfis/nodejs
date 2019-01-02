@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 
 ENV NODE_MAJOR_VERSION="8" NODE_DOCUMENT_ROOT="/opt/nodejs/" NODE_FILE="server.js" NODE_ERROR_LOG="/var/log/node.err"
-ENV SUPERVISOR_LOG_PATH="/var/log/" SUPERVISOR_CONF_DIR="/etc/supervisor/" SUPERVISORCTL_USER="admin" SUPERVISORCTL_PASS="password" DEBIAN_FRONTEND="noninteractive"
+ENV SUPERVISOR_LOG_PATH="/var/log/" SUPERVISOR_CONF_DIR="/etc/supervisor/" SUPERVISORCTL_LISTEN_PORT="9002" SUPERVISORCTL_USER="admin" SUPERVISORCTL_PASS="password" DEBIAN_FRONTEND="noninteractive"
 
 ### Change default interpreter to /bin/bash
 SHELL ["/bin/bash", "-c"]
@@ -16,7 +16,6 @@ RUN source /usr/lib/os-release && curl -s https://deb.nodesource.com/gpgkey/node
 COPY conf/supervisor/ /etc/supervisor/
 ADD run.sh /
 
-EXPOSE 3000
-EXPOSE 9001
+EXPOSE 3000 ${SUPERVISORCTL_LISTEN_PORT}
 
 ENTRYPOINT ["/run.sh"]
