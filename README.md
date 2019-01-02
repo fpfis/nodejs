@@ -13,6 +13,7 @@
 |`NODE_MAJOR_VERSION`|Version to install                                                    |`10`
 |`NODE_DOCUMENT_ROOT`|Node source path                                                      |`/opt/nodejs/`
 |`NODE_FILE`         |Node file                                                             |`server.js`
+|`NODE_ERROR_LOG`    |Error log path                                                        |`/var/log/node.err`
 ### Supervisor
 | Variable            | Description                     |  Default
 |---------------------|---------------------------------|------------------

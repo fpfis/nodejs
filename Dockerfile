@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-ENV NODE_MAJOR_VERSION="8" NODE_DOCUMENT_ROOT="/opt/nodejs/" NODE_FILE="server.js"
+ENV NODE_MAJOR_VERSION="8" NODE_DOCUMENT_ROOT="/opt/nodejs/" NODE_FILE="server.js" NODE_ERROR_LOG="/var/log/node.err"
 ENV SUPERVISOR_LOG_PATH="/var/log/" SUPERVISOR_CONF_DIR="/etc/supervisor/" SUPERVISORCTL_USER="admin" SUPERVISORCTL_PASS="password" DEBIAN_FRONTEND="noninteractive"
 
 ### Change default interpreter to /bin/bash
