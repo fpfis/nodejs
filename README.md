@@ -8,12 +8,13 @@
 
 ## Variables
 ### Nodejs
-| Variable           | Description      |  Default
-|--------------------|------------------|---------------------
-|`NODE_MAJOR_VERSION`|Version to install|`10`
-|`NODE_DOCUMENT_ROOT`|Node source path  |`/opt/nodejs/`
-|`NODE_FILE`         |Node server file  |`server.js`
-|`NODE_ERROR_LOG`    |Error log path    |`/var/log/node.err`
+| Variable           | Description                    |  Default
+|--------------------|--------------------------------|---------------------
+|`NODE_MAJOR_VERSION`|Version to install              |`10`
+|`NODE_DOCUMENT_ROOT`|Node source path                |`/opt/nodejs/`
+|`NODE_FILE`         |Node server file                |`server.js`
+|`NODE_ERROR_LOG`    |Error log path                  |`/var/log/node.err`
+|`NODE_IGNORE_FILES` |Ignore files for node-supervisor|`cache`
 ### Supervisor
 | Variable                  | Description|  Default
 |---------------------------|------------|------------------
