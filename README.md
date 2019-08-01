@@ -3,7 +3,7 @@
 
 ## Description
 * Ubuntu 18.04
-* Nodejs 8
+* Nodejs 10
 * Supervisord
 
 ## Variables
