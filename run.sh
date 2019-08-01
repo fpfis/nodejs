@@ -5,6 +5,7 @@ set -e
 export CMD="${@}"
 
 if [ -z "${CMD}" ]; then
+  cd ${NODE_DOCUMENT_ROOT}
   # If no run command provided, run supervisor as root a:
   /usr/bin/supervisord -nc /etc/supervisor/supervisord.conf
 else
